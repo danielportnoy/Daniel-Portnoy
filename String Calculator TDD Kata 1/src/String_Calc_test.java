@@ -52,4 +52,11 @@ public class String_Calc_test {
 	{
 		assertEquals(calc.Add("7,7\n7,7"), 28);
 	}
+	
+	@Test
+    public void SupportDifferentDelimiters()
+    {
+		assertEquals(calc.Add("//;\n7;7"), 14);
+    }
+
 }
