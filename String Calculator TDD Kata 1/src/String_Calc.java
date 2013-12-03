@@ -11,21 +11,29 @@ public class String_Calc {
 	
 	int Add(String input)
 	{	
+		if(isEmpty(input))
+			return 0;
+		
 		String[] s = input.split(delimiters);
 		
-		if(s[0].equals("//;"))
-		{
-			input = s[1];
-			delimiters = "[//,\n;]+";
-		}
+		char c;
+		
+        try
+        {
+        	StringToInt(s[0]);
+        }
+        catch(NumberFormatException e)
+        {
+                c=s[0].charAt(2);
+                s[1]=s[1].replace(c, ',');            
+                input = s[1];              
+        }
 			
 		String[] numbers = input.split(delimiters);
 		
 		numbers = input.split(delimiters);
 		
-		if(isEmpty(input))
-			return 0;
-		else if(input.length() == 1)
+		 if(input.length() == 1)
 			return  StringToInt(input);
 
 		return Sum(numbers);	
@@ -50,5 +58,12 @@ public class String_Calc {
 			sum += StringToInt(numbers[i]);
 		
 		return sum;
+	}
+	
+	private boolean CharIsInt(char c)
+	{
+		if(c < 48 || c > 57)
+			return false;
+		return true;
 	}
 }
