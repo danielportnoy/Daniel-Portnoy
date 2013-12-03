@@ -35,4 +35,9 @@ public class String_Calc_test {
 		assertEquals(calc.Add("7"), 7);
 	}
 
+	@Test
+	public void TwoNum()
+	{
+		assertEquals(calc.Add("7,7"), 14);
+	}
 }
