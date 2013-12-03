@@ -31,9 +31,13 @@ public class String_Calc {
 			
 		String[] numbers = input.split(delimiters);
 		
-		numbers = input.split(delimiters);
-		
-		 if(input.length() == 1)
+		for (int i=0 ; i<numbers.length ; i++)
+		{
+			if( StringToInt(numbers[i]) < 0 )
+				return 0;
+		}
+				
+		if(input.length() == 1)
 			return  StringToInt(input);
 
 		return Sum(numbers);	
@@ -58,12 +62,5 @@ public class String_Calc {
 			sum += StringToInt(numbers[i]);
 		
 		return sum;
-	}
-	
-	private boolean CharIsInt(char c)
-	{
-		if(c < 48 || c > 57)
-			return false;
-		return true;
 	}
 }
