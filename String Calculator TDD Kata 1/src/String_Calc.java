@@ -15,7 +15,7 @@ public class String_Calc {
 			return 0;
 		else if(input.length() == 1)
 		{
-			return  StringToInt(numbers[0]);
+			return  StringToInt(input);
 		}
 		else
 		{
