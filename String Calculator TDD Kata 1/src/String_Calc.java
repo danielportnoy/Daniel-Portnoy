@@ -8,10 +8,19 @@
 public class String_Calc {
 
 	int Add(String input)
-	{
+	{		
+		String[] numbers = input.split(",");
+		
 		if(isEmpty(input))
 			return 0;
-		return StringToInt(input);
+		else if(input.length() == 1)
+		{
+			return  StringToInt(numbers[0]);
+		}
+		else
+		{
+			return StringToInt(numbers[0])+StringToInt(numbers[0]);
+		}
 	}
 
 	private boolean isEmpty(String input)
