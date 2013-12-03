@@ -11,6 +11,8 @@ public class String_Calc {
 	{		
 		String[] numbers = input.split(",");
 		
+		int sum = 0;
+		
 		if(isEmpty(input))
 			return 0;
 		else if(input.length() == 1)
@@ -19,8 +21,10 @@ public class String_Calc {
 		}
 		else
 		{
-			return Sum(numbers[0],numbers[1]);
+			for(int i = 0 ; i < numbers.length ; i ++)
+				sum += Integer.parseInt(numbers[i]);
 		}
+		return sum;
 	}
 
 	private boolean isEmpty(String input)
