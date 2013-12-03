@@ -7,18 +7,30 @@
 
 public class String_Calc {
 	
-	private final String delimiters ="[,\n]";
+	private String delimiters = "[,\n]+";
 	
 	int Add(String input)
-	{		
+	{	
+		String[] s = input.split(delimiters);
+		
+		if(s[0].equals("//;"))
+		{
+			input = s[1];
+			delimiters = "[//,\n;]+";
+		}
+			
 		String[] numbers = input.split(delimiters);
-				
+		
+		numbers = input.split(delimiters);
+		
 		if(isEmpty(input))
 			return 0;
 		else if(input.length() == 1)
 			return  StringToInt(input);
 
-			return Sum(numbers);	}
+		return Sum(numbers);	
+		
+	}
 
 	private boolean isEmpty(String input)
 	{
