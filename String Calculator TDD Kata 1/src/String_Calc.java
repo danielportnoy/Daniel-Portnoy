@@ -6,10 +6,12 @@
  * */
 
 public class String_Calc {
-
+	
+	private final String delimiters ="[,\n]";
+	
 	int Add(String input)
 	{		
-		String[] numbers = input.split("[,\n]");
+		String[] numbers = input.split(delimiters);
 				
 		if(isEmpty(input))
 			return 0;
