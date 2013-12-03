@@ -46,4 +46,10 @@ public class String_Calc_test {
 	{
 		assertEquals(calc.Add("7,7,7,7"), 28);
 	}
+	
+	@Test
+	public void LinesBetweenNumbers()
+	{
+		assertEquals(calc.Add("7,7\n7,7"), 28);
+	}
 }
