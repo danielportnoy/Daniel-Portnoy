@@ -19,7 +19,7 @@ public class String_Calc {
 		}
 		else
 		{
-			return StringToInt(numbers[0])+StringToInt(numbers[0]);
+			return Sum(numbers[0],numbers[1]);
 		}
 	}
 
@@ -33,4 +33,8 @@ public class String_Calc {
 		return Integer.parseInt(input);
 	}
 	
+	private int Sum(String n1 , String n2)
+	{
+		return StringToInt(n1)+StringToInt(n2);
+	}
 }
