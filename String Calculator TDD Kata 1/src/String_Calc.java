@@ -10,22 +10,13 @@ public class String_Calc {
 	int Add(String input)
 	{		
 		String[] numbers = input.split(",");
-		
-		int sum = 0;
-		
+				
 		if(isEmpty(input))
 			return 0;
 		else if(input.length() == 1)
-		{
 			return  StringToInt(input);
-		}
-		else
-		{
-			for(int i = 0 ; i < numbers.length ; i ++)
-				sum += Integer.parseInt(numbers[i]);
-		}
-		return sum;
-	}
+
+			return Sum(numbers);	}
 
 	private boolean isEmpty(String input)
 	{
@@ -37,8 +28,13 @@ public class String_Calc {
 		return Integer.parseInt(input);
 	}
 	
-	private int Sum(String n1 , String n2)
+	private int Sum(String[] numbers)
 	{
-		return StringToInt(n1)+StringToInt(n2);
+		int sum = 0;
+		
+		for(int i = 0 ; i < numbers.length ; i ++)
+			sum += StringToInt(numbers[i]);
+		
+		return sum;
 	}
 }
