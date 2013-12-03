@@ -40,4 +40,10 @@ public class String_Calc_test {
 	{
 		assertEquals(calc.Add("7,7"), 14);
 	}
+	
+	@Test
+	public void AlotOfNumbers()
+	{
+		assertEquals(calc.Add("7,7,7,7"), 28);
+	}
 }
