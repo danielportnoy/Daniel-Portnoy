@@ -9,7 +9,7 @@ public class String_Calc {
 	
 	private String delimiters = "[,\n]+";
 	
-	int Add(String input)
+	int Add(String input) throws Exception
 	{	
 		if(isEmpty(input))
 			return 0;
@@ -31,11 +31,16 @@ public class String_Calc {
 			
 		String[] numbers = input.split(delimiters);
 		
+		String neg_nums="";
+		
 		for (int i=0 ; i<numbers.length ; i++)
 		{
 			if( StringToInt(numbers[i]) < 0 )
-				return 0;
+					neg_nums += numbers[i] + " ";
 		}
+		
+		if(isEmpty(neg_nums) == false)
+			throw new Exception("negatives not allowed " + neg_nums);
 				
 		if(input.length() == 1)
 			return  StringToInt(input);

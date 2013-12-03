@@ -8,7 +8,6 @@
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-
 import org.junit.Before;
 
 
@@ -24,37 +23,37 @@ public class String_Calc_test {
      }
 	
 	@Test
-	public void EmptyStrRetZero()
+	public void EmptyStrRetZero() throws Exception
 	{
 		assertEquals(calc.Add(""), 0);
 	}
 	
 	@Test
-	public void OneNum()
+	public void OneNum() throws Exception
 	{
 		assertEquals(calc.Add("7"), 7);
 	}
 
 	@Test
-	public void TwoNum()
+	public void TwoNum() throws Exception
 	{
 		assertEquals(calc.Add("7,7"), 14);
 	}
 	
 	@Test
-	public void AlotOfNumbers()
+	public void AlotOfNumbers() throws Exception
 	{
 		assertEquals(calc.Add("7,7,7,7"), 28);
 	}
 	
 	@Test
-	public void LinesBetweenNumbers()
+	public void LinesBetweenNumbers() throws Exception
 	{
 		assertEquals(calc.Add("7,7\n7,7"), 28);
 	}
 	
 	@Test
-    public void SupportDifferentDelimiters()
+    public void SupportDifferentDelimiters() throws Exception
     {
 		assertEquals(calc.Add("//;\n7;7"), 14);
     }
